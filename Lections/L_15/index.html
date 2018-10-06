@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .menu {
+            display: flex;
+            list-style-type: none;
+        }
+        .menu li {
+            margin: 5px;
+        }
+        .menu.row {
+            flex-direction: row;
+        }
+        .menu.column {
+            flex-direction: column;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li ul {
+            display: none;
+        }
+        li:hover ul{
+            display: block;
+        }
+    </style>
+</body>
+</html>
