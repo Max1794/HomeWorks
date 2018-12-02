@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src = './main.js'></script>
+</head>
+<body>
+    <div class="products">
+        <div class = 'clock'>Часы
+            <button type = "button" class = 'add'>Добавить в корзину</button>
+            <button type = "button" class = 'remove'>Удалить из корзины</button>
+        </div>
+
+        <div class = 'teapot'>Чайник
+            <button type = "button" class = 'add'>Добавить в корзину</button>
+            <button type = "button" class = 'remove'>Удалить из корзины</button>
+        </div>
+
+        <div class = 'table'>Стол
+            <button type = "button" class = 'add'>Добавить в корзину</button>
+            <button type = "button" class = 'remove'>Удалить из корзины</button>
+        </div>
+
+        <div class = 'phone'>Телефон
+            <button type = "button" class = 'add'>Добавить в корзину</button>
+            <button type = "button" class = 'remove'>Удалить из корзины</button>
+        </div>
+
+        <div class = 'tv'>Телевизор
+            <button type = "button" class = 'add'>Добавить в корзину</button>
+            <button type = "button" class = 'remove'>Удалить из корзины</button>
+        </div>
+    </div>
+
+    <div id = "basket">Корзина
+            <p id = 'count'>Список товаров</p>
+            <p id = 'product'></p>
+            <button type = "button" id = 'removeToBasket'>Очистить корзину</button>            
+    </div>
+    <style>
+        .products > div {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            font-size: 20px;
+            color: black;
+            font-family:'Times New Roman', Times, serif;
+            border: solid 2px lightseagreen;
+        }
+
+        .products > div:hover {
+            color: lightgray;
+        }
+
+        #basket {
+            position: absolute;
+            width: 170px;
+            /* height: 100px; */
+            display: inline-block;
+            color: black;
+            font-size: 20px;
+            border: solid 2px lightskyblue;
+            right: 0px;
+            top: 25px;
+        }
+        .count {
+            display: inline-block;
+        }
+        .parag {
+            display: block;
+        }
+
+    </style>
+</body>
+</html>
