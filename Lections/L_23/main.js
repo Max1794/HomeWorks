@@ -75,7 +75,8 @@ Array.prototype.getRender = function () {
     var table = document.createElement('table');
     var arr = this;
     for(let i = 0; i < arr.length; i++){
-        var tr = document.createElement('tr');
+        if(arr[i].length){
+            var tr = document.createElement('tr');
         for(let j = 0; j < arr[i].length; j++){
             var td = document.createElement('td');
             var elem = document.createTextNode(arr[i][j]);
@@ -83,6 +84,13 @@ Array.prototype.getRender = function () {
             tr.appendChild(td);            
         }
         table.appendChild(tr);
+        }else{
+            var td = document.createElement('td');
+            var elem = document.createTextNode(arr[i]);
+            td.appendChild(elem);
+            table.appendChild(td);
+        }
+        
     }
     document.body.appendChild(table);
 }
@@ -90,8 +98,11 @@ var arr = [ [34, 89, 90, 789, 675],
             [5435, 5657, 56, 34, 344], 
             [563, 4534, 45, 808, 123]
           ];
-console.log(arr.length)
 
+var list_1 = [23, 45, 67, 54, 3, 5, 7, 8, 90, 123, 345, 34];
+
+          
 window.onload = function(){
     arr.getRender();
+    list_1.getRender()
 }
