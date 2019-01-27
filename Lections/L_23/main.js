@@ -103,6 +103,29 @@ var list_1 = [23, 45, 67, 54, 3, 5, 7, 8, 90, 123, 345, 34];
 
           
 window.onload = function(){
-    arr.getRender();
-    list_1.getRender()
+    // arr.getRender();
+    arr.render()
+}
+
+Array.prototype.render = function(){
+    let table = document.createElement('table');
+    const arr = this;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].length){
+            let tr = document.createElement('tr');
+            for (let j = 0; j < arr[i].length; j++){
+                let td = document.createElement('td');
+                let elem = document.createTextNode(arr[i][j]);
+                td.appendChild(elem);
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }else{
+            let td = document.createElement('td');
+            let elem = document.createTextNode(arr[i]);
+            td.appendChild(elem);
+            table.appendChild(td);
+        }
+        document.body.appendChild(table)
+    }
 }
