@@ -125,13 +125,18 @@ Array.prototype.render = function () {
             })
             tr += `${getTitle(td, 'tr')}`;
         }else{
-                td += `${getTitle(item, 'td')}`;
-                return td;
+            td += `${getTitle(item, 'td')}`;
+            if((pos + 1) % 3 === 0){
+                tr += `${getTitle(td, 'tr')}`;
+                td = '';
+            }else if(pos === (arr.length - 1 || arr.length -2)) {
+                tr += `${getTitle(td, 'tr')}`
+            }
         }
-
     });
-    let trr = `${getTitle(td, 'tr')}`;
-    let table = `${getTitle(tr || trr, 'table')}`;
+    // let trr = `${getTitle(td, 'tr')}`;
+    let table = `${getTitle(tr, 'table')}`;
+    console.log(table)
     document.body.innerHTML = table;
 }
  
@@ -144,7 +149,7 @@ var arr = [ [34, 89, 90, 789, 675],
             [563, 4534, 45, 808, 123]
           ];
 
-var list_1 = [23, 45, 67, 54, 3, 5, 7, 8, 90, 123, 345, 34];
+var list_1 = [23, 45, 67, 54, 3, 5, 7, 8, 90, 123, 345, 34, 78, 89, 90, 11, 14];
 
           
 window.onload = function(){
