@@ -115,7 +115,7 @@ Array.prototype.getRender = function () {
 Array.prototype.render = function () {
     let arr = this;
     let tr = '';
-    let td;
+    let td = '';
     arr.map(function(item, pos, arr){
         if(item.length){
             let td = '';
@@ -125,14 +125,8 @@ Array.prototype.render = function () {
             })
             tr += `${getTitle(td, 'tr')}`;
         }else{
-            if(td === undefined){
-                td = '';
-                td = `${getTitle(item, 'td')}`;
-                return td;
-            }else{
                 td += `${getTitle(item, 'td')}`;
                 return td;
-            }
         }
 
     });
@@ -155,7 +149,7 @@ var list_1 = [23, 45, 67, 54, 3, 5, 7, 8, 90, 123, 345, 34];
           
 window.onload = function(){
     // arr.getRender();
-    // arr.getRender()
-    list_1.render()
-    // arr.render()
+    // list_1.getRender()
+    list_1.render();
+    // arr.render();
 }
