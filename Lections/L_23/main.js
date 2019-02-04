@@ -134,7 +134,6 @@ Array.prototype.render = function () {
             }
         }
     });
-    // let trr = `${getTitle(td, 'tr')}`;
     let table = `${getTitle(tr, 'table')}`;
     console.log(table)
     document.body.innerHTML = table;
