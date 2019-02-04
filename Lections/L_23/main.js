@@ -79,6 +79,7 @@ Array.prototype.getRender = function () {
             var tr = document.createElement('tr');
         for(let j = 0; j < arr[i].length; j++){
             var td = document.createElement('td');
+            console.log(td)
             var elem = document.createTextNode(arr[i][j]);
             td.appendChild(elem);
             tr.appendChild(td);            
@@ -94,6 +95,56 @@ Array.prototype.getRender = function () {
     }
     document.body.appendChild(table);
 }
+
+// Array.prototype.render = function(){
+//     let table = `${createTag('table')}`    
+//     this.forEach(function(item){
+//         if(item.length){
+//             let tr = `${createTag('tr')}`;
+//             item.forEach(function(item){
+//                 let td = `${getTitle(item, 'td')}`;
+//                 tr.innerHTML = `${td}`
+//                 console.log(td);
+//             })
+//             table.innerHTML = `${tr}`;            
+//         }
+//     })
+//     document.body.innerHTML = `${table}`;;    
+// }
+
+Array.prototype.render = function () {
+    let arr = this;
+    let tr = '';
+    let td;
+    arr.map(function(item, pos, arr){
+        if(item.length){
+            let td = '';
+            item.map(function(i){
+                td += `${getTitle(i, 'td')}`;
+                return td;
+            })
+            tr += `${getTitle(td, 'tr')}`;
+        }else{
+            if(td === undefined){
+                td = '';
+                td = `${getTitle(item, 'td')}`;
+                return td;
+            }else{
+                td += `${getTitle(item, 'td')}`;
+                return td;
+            }
+        }
+
+    });
+    let trr = `${getTitle(td, 'tr')}`;
+    let table = `${getTitle(tr || trr, 'table')}`;
+    document.body.innerHTML = table;
+}
+ 
+function getTitle(title, tagName){
+    return `<${tagName}>${title}</${tagName}>`;
+}
+
 var arr = [ [34, 89, 90, 789, 675], 
             [5435, 5657, 56, 34, 344], 
             [563, 4534, 45, 808, 123]
@@ -104,28 +155,7 @@ var list_1 = [23, 45, 67, 54, 3, 5, 7, 8, 90, 123, 345, 34];
           
 window.onload = function(){
     // arr.getRender();
-    arr.render()
-}
-
-Array.prototype.render = function(){
-    let table = document.createElement('table');
-    const arr = this;
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i].length){
-            let tr = document.createElement('tr');
-            for (let j = 0; j < arr[i].length; j++){
-                let td = document.createElement('td');
-                let elem = document.createTextNode(arr[i][j]);
-                td.appendChild(elem);
-                tr.appendChild(td);
-            }
-            table.appendChild(tr);
-        }else{
-            let td = document.createElement('td');
-            let elem = document.createTextNode(arr[i]);
-            td.appendChild(elem);
-            table.appendChild(td);
-        }
-        document.body.appendChild(table)
-    }
+    // arr.getRender()
+    list_1.render()
+    // arr.render()
 }
