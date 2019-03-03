@@ -1,6 +1,6 @@
 //             Для тегов без атрибутов
 // var str = "<h1>efwfj</h1> roigjerjg <br> <div><img></div> <p><span>kjfkjfbiv</span></p> <br> kerhkjhq <input> iryiru <div><p>ekruufhk</p></div> tijgeirgu <img>";
-// var res = str.match(/<[a-zA-Z][a-zA-Z0-9]*>(<[a-zA-Z][a-zA-Z0-9]*>)?(.*)?(\/<[a-zA-Z][a-zA-Z0-9]*>)?(<\/[a-zA-Z][a-zA-Z0-9]*>)?/gi)
+// var result = str.match(/<[a-zA-Z][a-zA-Z0-9]*>(<[a-zA-Z][a-zA-Z0-9]*>)?(.*)?(\/<[a-zA-Z][a-zA-Z0-9]*>)?(<\/[a-zA-Z][a-zA-Z0-9]*>)?/gi)
 // console.log(result)
 //            Для тегов с любыми атрибутами
 
